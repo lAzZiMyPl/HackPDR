@@ -1,0 +1,19 @@
+setTimeout(() => {
+    let elem = document.querySelector("div.bad");
+    let elems = document.querySelectorAll("ul > li > a.r");
+    let elemT = document.querySelector("tbody > tr > td.info-td-2");
+    let elemsT = document.querySelectorAll("div > ul.num-q > li");
+    let rand = Math.floor(Math.random() * (16 - 10) + 10);
+
+    elem.innerHTML = "Іспит зданий";
+    elem.className = "good";
+    elemT.innerHTML = `00:${rand}:${Math.floor(Math.random() * (59 - 1) + 1)}`;
+
+    elems.forEach(item => item.className = "g");
+    
+    for (let tries = Math.floor(Math.random() * (2 - 0) + 1); tries > 0; tries--){
+        elems[Math.floor(Math.random() * (elems.length -1) + 0)].className = "r";
+    }
+    elemsT.forEach((item, index, array) => index < rand * 3/2 ? item.style.display = "block": item.style.display = "none");
+    
+})
